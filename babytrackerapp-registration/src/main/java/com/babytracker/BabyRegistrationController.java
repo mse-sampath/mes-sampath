@@ -15,11 +15,11 @@ public class BabyRegistrationController {
 	@Autowired
 	BabyRepository repository;
 	
-	@PostMapping(value = "/registration/create")
+	@PostMapping("/registration/create")
 	public Baby postBaby(@RequestBody Baby baby) {
 		System.out.println("registering new baby");
 		Baby _baby = repository.save(new Baby(baby.getName(), baby.getDateOfBirth(), baby.getGender()));
-		repository.save(baby);
+		System.out.println(_baby);
 		return _baby;
 	}
 	
