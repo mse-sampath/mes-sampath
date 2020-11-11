@@ -1,5 +1,7 @@
 package com.babytracker;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,19 +24,32 @@ public class Baby {
 	private String name;
 	
 	@Column(name = "dob")
-	private String dateOfBirth;
+	private LocalDate dateOfBirth;
 	
 	@Column(name = "gender")
 	private String gender;
+	
+	@Column(name = "weight")
+	private float weight;
+	
+	
+	@Column(name = "height")
+	private float height;
+	
+	@Column(name = "bloodgroup")
+	private String bloodGroup;
 	
 	public Baby() {
 		
 	}
 	
-	public Baby(String name, String dateOfBirth, String gender) {
+	public Baby(String name, LocalDate dateOfBirth, String gender, float weight, float height, String bloodGroup) {
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 		this.gender = gender;
+		this.weight = weight;
+		this.height = height;
+		this.bloodGroup = bloodGroup;
 	}
 	
 	
@@ -48,10 +63,10 @@ public class Baby {
 		return id;
 	}
 	
-	public String getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	public String getGender() {
@@ -59,6 +74,30 @@ public class Baby {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	
+	public float getWeight() {
+		return weight;
+	}
+
+	public void setWeight(float weight) {
+		this.weight = weight;
+	}
+
+	public float getHeight() {
+		return height;
+	}
+
+	public void setHeight(float height) {
+		this.height = height;
+	}
+
+	public String getBloodGroup() {
+		return bloodGroup;
+	}
+
+	public void setBloodGroup(String bloodGroup) {
+		this.bloodGroup = bloodGroup;
 	}
 
 }
